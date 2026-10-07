@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISTQB CTFL 4.0 - Simulatore</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="container">
+
+    <header class="header">
+      <div>
+        <h1>ISTQB CTFL 4.0</h1>
+        <p>Simulatore d'esame</p>
+      </div>
+
+      <div id="timer" class="timer">60:00</div>
+    </header>
+
+    <!-- SCHERMATA INIZIALE -->
+    <section id="start-screen" class="card start-screen">
+
+      <h2>Simulazione d'esame</h2>
+
+      <p>
+        Il test è composto da 40 domande tratte dalle simulazioni
+        presenti nel notebook ISTQB.
+      </p>
+
+      <div class="test-info">
+        <div>
+          <strong>40</strong>
+          <span>domande</span>
+        </div>
+
+        <div>
+          <strong>60</strong>
+          <span>minuti</span>
+        </div>
+      </div>
+
+      <button id="start-button" class="primary-button">
+        Inizia simulazione
+      </button>
+
+      <p id="loading-message" class="loading hidden">
+        Caricamento delle domande da NotebookLM...
+      </p>
+
+      <p id="error-message" class="error hidden"></p>
+
+    </section>
+
+
+    <!-- SCHERMATA QUIZ -->
+    <section id="quiz-screen" class="card hidden">
+
+      <div class="quiz-top">
+
+        <span id="question-number">
+          Domanda 1 di 40
+        </span>
+
+        <span id="score-live"></span>
+
+      </div>
+
+      <div class="progress">
+        <div id="progress-bar"></div>
+      </div>
+
+      <h2 id="question-text"></h2>
+
+      <div id="answers" class="answers"></div>
+
+      <div id="feedback" class="feedback hidden"></div>
+
+      <button id="next-button"
+              class="primary-button hidden">
+        Domanda successiva
+      </button>
+
+    </section>
+
+
+    <!-- RISULTATO -->
+    <section id="result-screen" class="card hidden">
+
+      <h2>Simulazione completata</h2>
+
+      <div class="final-score">
+        <span id="final-correct">0 / 40</span>
+        <strong id="final-percentage">0%</strong>
+      </div>
+
+      <div class="result-details">
+
+        <p>
+          Risposte corrette:
+          <strong id="correct-count">0</strong>
+        </p>
+
+        <p>
+          Risposte errate:
+          <strong id="wrong-count">0</strong>
+        </p>
+
+        <p>
+          Non risposte:
+          <strong id="unanswered-count">0</strong>
+        </p>
+
+      </div>
+
+      <div id="pass-result"></div>
+
+      <button id="review-button"
+              class="secondary-button">
+        Rivedi le risposte
+      </button>
+
+      <button id="restart-button"
+              class="primary-button">
+        Nuova simulazione
+      </button>
+
+    </section>
+
+
+    <!-- REVISIONE -->
+    <section id="review-screen"
+             class="card hidden">
+
+      <h2>Revisione delle risposte</h2>
+
+      <div id="review-container"></div>
+
+      <button id="review-restart-button"
+              class="primary-button">
+        Nuova simulazione
+      </button>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
